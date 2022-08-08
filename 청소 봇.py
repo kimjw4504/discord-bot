@@ -1,4 +1,7 @@
 # 파이썬의 기본 내장 함수가 아닌 다른 함수 혹은 다른 기능이 필요할 때 사용함
+impott os
+
+
 import discord, asyncio
 
 client = discord.Client()
@@ -25,4 +28,6 @@ async def on_message(message):
             await message.channel.send("{}, 당신은 명령어를 사용할 수 있는 권한이 없습니다".format(message.author.mention))
 
 # 봇을 실행시키기 위한 토큰을 작성해주는 곳
-client.run('MTAwNTY4MDQyNzYwMTc2NDUxNA.GgdjBS.Id0SNrW2xofd5BPb6soH__Ilxkd9jJysr2MTps')
+
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
